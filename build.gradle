@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'it.frigir'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.5.1'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.5.1'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging.showStandardStreams = true
+    testLogging{
+        events "passed","skipped","failed"
+    }
+}
